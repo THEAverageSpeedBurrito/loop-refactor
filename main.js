@@ -21,12 +21,9 @@ module.exports = {
   },
 
   someObjsContainProp: (arr, prop) => {
-    for(var i = 0; i < arr.length; i++){
-      if(arr[i].hasOwnProperty(prop)){
-        return true;
-      }
-    }
-    return false;
+    return arr.some((obj) => {
+      return obj.hasOwnProperty(prop);
+    })
   },
 
   convertNameArrayToObject: (arr) => {
