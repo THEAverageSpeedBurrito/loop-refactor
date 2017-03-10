@@ -31,21 +31,17 @@ module.exports = {
 
   convertNameArrayToObject: (arr) => {
     return arr.map((subArr) => {
-      var obj = {
+      return {
         first: subArr[0],
         last: subArr[1]
       }
-      return obj
     })
   },
 
   objContainsProp: (arr, prop) => {
-    for (var i = 0; i < arr.length; i++){
-      if(!arr[i].hasOwnProperty(prop)){
-        return false;
-      }
-    }
-    return true;
+    return arr.every((obj) => {
+      return obj.hasOwnProperty(prop)
+    })
   },
 
   stringMatch: (arr, str) => {
